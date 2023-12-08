@@ -1,11 +1,21 @@
-import TextButton from "./TextButton"
-import { ComponentMeta, ComponentStory} from "@storybook/react"
+import TextButton from "./TextButton";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
-    title: "Components/Button",
-    component: TextButton,
-} as ComponentMeta<typeof TextButton>
+  title: "Components/Button",
+  component: TextButton,
+} as ComponentMeta<typeof TextButton>;
 
-export const Submit = () => <TextButton label="Submit"/>
+const Template: ComponentStory<typeof TextButton> = (args) => (
+  <TextButton {...args} />
+);
 
-export const Check = () => <TextButton label="Check"/>
+export const Submit = Template.bind({});
+Submit.args = {
+  label: "Button",
+};
+
+export const Check = Template.bind({});
+Check.args = {
+  label: "Button",
+};
